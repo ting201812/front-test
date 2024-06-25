@@ -1,0 +1,10 @@
+public
+node_modules
+src/assets
+src/script
+dist
+
+*.cjs
+*.d.ts
+
+vite.config.ts
