@@ -6,9 +6,7 @@ import Components from 'unplugin-vue-components/vite';
 import { ArcoResolver, } from 'unplugin-vue-components/resolvers';
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ?
-    '/front-test/' :
-    './',
+  base: '/front-test/',
   envDir: './viteEnv',
   plugins: [
     vue(),

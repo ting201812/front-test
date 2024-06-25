@@ -21,11 +21,12 @@ import dayjs from 'dayjs';
 
 import UserActivity from '@/components/UserActivity/index.vue';
 import CountryDistribution from '@/components/CountryDistribution/index.vue';
+import serveIp from '@/config/index';
 
 const csvData = ref<Record<string, any>[]>([]);
 
 const getCSVData = (): void => {
-  axios.get('/test_data.csv').then(({ data, }) => {
+  axios.get(`${serveIp}/test_data.csv`).then(({ data, }) => {
     if (data) {
       const lines = data.split('\n');
       const headers = lines[0].split(',');
@@ -41,7 +42,8 @@ const getCSVData = (): void => {
           }, {});
         })
         .sort((a: Record<string, any>, b: Record<string, any>) => dayjs(a.created_at_date).valueOf() - dayjs(b.created_at_date).valueOf());
-    }
+        console.log('csvData.value', csvData.value);
+      }
   });
 };
 
