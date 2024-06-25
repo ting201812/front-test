@@ -159,6 +159,14 @@ onBeforeUnmount(() => {
   :deep().arco-table {
     .arco-table-container  {
       height: 100%;
+
+      .arco-scrollbar:last-child {
+        height: 100%;
+
+        .arco-table-element {
+          height: 100%;
+        }
+      }
     }
   }
 }
