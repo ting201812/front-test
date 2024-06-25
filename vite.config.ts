@@ -7,7 +7,9 @@ import { ArcoResolver, } from 'unplugin-vue-components/resolvers';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: process.env.NODE_ENV === 'production' ?
+    '/front-test' :
+    './',
   envDir: './viteEnv',
   plugins: [
     vue(),
