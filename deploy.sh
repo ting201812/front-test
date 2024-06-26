@@ -6,20 +6,10 @@ set -e
 # 构建
 yarn build
 
-# 进入构建文件夹
-cd dist
+# git add -A -f
+# git commit -m 'deploy'
+# git push origin test-page
 
-# 如果你要部署到自定义域名
-# echo 'www.example.com' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# 如果你要部署在 https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
-
-# 如果你要部署在 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/ting201812/front-test.git master:test-page
-
-cd -
+git add dist 
+git commit -m "测试部署"
+git subtree push --prefix dist origin test-page

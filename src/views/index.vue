@@ -42,8 +42,7 @@ const getCSVData = (): void => {
           }, {});
         })
         .sort((a: Record<string, any>, b: Record<string, any>) => dayjs(a.created_at_date).valueOf() - dayjs(b.created_at_date).valueOf());
-        console.log('csvData.value', csvData.value);
-      }
+    }
   });
 };
 

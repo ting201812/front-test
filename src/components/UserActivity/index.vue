@@ -136,7 +136,6 @@ const drawChart = (): void => {
 
 watch(() => props.csvData, () => {
   nextTick(() => {
-    console.log('props.csvata', props.csvData);
     drawChart();
   });
 });
